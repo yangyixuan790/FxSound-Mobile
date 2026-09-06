@@ -1,0 +1,24 @@
+# Build artifacts
+android/build/
+android/build/
+*.apk
+!FxSound.apk
+
+# Java crash logs
+hs_err_pid*.log
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Node
+node_modules/
+
+# Temp
+*.tmp

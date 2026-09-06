@@ -153,6 +153,10 @@ apksigner sign --ks build\debug.keystore --ks-pass pass:android --key-pass pass:
 - Android 10 (API 29) 及以上（`AudioPlaybackCapture` 最低要求）
 - 真机运行（模拟器不支持 `MediaProjection` 系统音频捕获）
 
+## 致谢
+
+本项目受 [FxSound](https://www.fxsound.com) 桌面版启发，感谢原作者团队开源了优秀的音频增强技术。本项目的均衡器参数、效果设计与预设理念均源自 FxSound 桌面版，在 Android 平台上以原生 PCM 处理重新实现。
+
 ## 许可
 
 本项目为 FxSound 桌面版的 Android 移植版本，仅供学习交流使用。

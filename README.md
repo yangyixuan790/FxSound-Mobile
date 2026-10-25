@@ -126,7 +126,10 @@ javac -classpath "$sdk\platforms\android-36\android.jar" -d build\classes src\co
 d8 --lib "$sdk\platforms\android-36\android.jar" --output build\dex build\classes\com\fxsound\mobile\*.class
 
 # 打包 + 对齐 + 签名
-aapt add build\app-unsigned.apk build\dex\classes.dex
+# 注意：必须从 dex 所在目录执行 aapt add，否则 classes.dex 会被打包到 build/dex/ 子目录而非 APK 根目录，导致安装失败 (INSTALL_FAILED_INVALID_APK)
+pushd build\dex
+aapt add ..\app-unsigned.apk classes.dex
+popd
 zipalign -f 4 build\app-unsigned.apk build\app-aligned.apk
 apksigner sign --ks build\debug.keystore --ks-pass pass:android --key-pass pass:android --out FxSound.apk build\app-aligned.apk
 ```
